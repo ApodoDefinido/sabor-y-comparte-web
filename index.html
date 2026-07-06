@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabor y Comparte - Recetas y Experiencias</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar header-fixed">
+      <div class="nav-container">
+        <input type="checkbox" id="menu-toggle-checkbox" />
+        <label for="menu-toggle-checkbox" class="hamburger-btn">&#9776;</label>
+
+        <nav class="nav-content">
+          <div class="nav-links left-links">
+            <a href="#recetas">Recetas</a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#historia">Historia</a>
+          </div>
+
+          <a href="#" class="logo" aria-label="Volver al inicio">
+             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f26c36" stroke-width="2">
+                 <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+             </svg>
+          </a>
+
+          <div class="nav-links right-links">
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar recetas..." />
+              <button type="button" aria-label="Buscar">&#128269;</button>
+            </div>
+            <a href="#contacto">Contacto</a>
+            <a href="#planes" class="btn-registro">Únete gratis</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="contenedor-principal">
+      <section class="hero-grid" id="premium">
+        <div class="hero-imagen-caja">
+          <img src="images/ceviche.png" alt="Ceviche Fresco" />
+        </div>
+
+        <div class="hero-texto">
+          <h1>Sabor en cada momento</h1>
+          <h2>Descubre y comparte tus<br />recetas favoritas</h2>
+          <p>
+            Desde armar el picnic perfecto en el parque hasta preparar la
+            hamburguesa ideal en casa. Únete a nuestra comunidad y eleva tus
+            comidas diarias.
+          </p>
+        </div>
+
+        <div class="hero-imagen-caja">
+          <img
+            src="images/platoespecial.png" alt="Plato Especial"/>
+        </div>
+      </section>
+
+      <section class="seccion-extra" id="colecciones">
+        <h2 class="titulo-seccion">Colecciones Destacadas</h2>
+        <div class="colecciones-grid">
+          <div class="coleccion-card">
+            <div class="coleccion-imagen">
+              <img
+                src="images/picnic.png" alt="Picnic al aire libre"/>
+            </div>
+            <div class="coleccion-info">
+              <h3>Especial Picnics</h3>
+              <p>
+                Recetas prácticas, ricas y fáciles de empacar para compartir en
+                una escapada a la playa o una tarde relajada al aire libre.
+              </p>
+            </div>
+          </div>
+          <div class="coleccion-card">
+            <div class="coleccion-imagen">
+              <img
+                src="images/cenarapida.jpg" alt="Cenas Rápidas"
+              />
+            </div>
+            <div class="coleccion-info">
+              <h3>Cenas en 15 Minutos</h3>
+              <p>
+                Para esos días donde llegas del trabajo o de la universidad con
+                poco tiempo pero muchas ganas de comer rico y casero.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="titulo-seccion" style="margin-bottom: 25px">
+        Las Favoritas de la Comunidad
+      </h2>
+      <section class="tarjetas-grid" id="recetas">
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img
+              src="images/hamburguesa.png" alt="Hamburguesa"/>
+          </div>
+          <h3>Hamburguesa</h3>
+          <p class="card-desc">
+            El clásico indiscutible para el fin de semana.
+          </p>
+        </article>
+
+        <article class="tarjeta tarjeta-pequena">
+          <div class="tarjeta-imagen">
+            <img src="images/ramen.png" alt="Ramen" />
+          </div>
+          <h3>Ramen</h3>
+          <p class="card-desc">Un tazón reconfortante y lleno de tradición.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img src="images/salmon.png" alt="Salmón" />
+          </div>
+          <h3>Salmón</h3>
+          <p class="card-desc">Opciones ligeras para una cena especial.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img
+              src="images/panqueques.png" alt="Panqueques"/>
+          </div>
+          <h3>Panqueques</h3>
+          <p class="card-desc">Dulces amaneceres para el desayuno.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="tarjeta-imagen">
+            <img src="images/helado.png" alt="Helado" />
+          </div>
+          <h3>Helado</h3>
+          <p class="card-desc">El toque dulce para los días soleados.</p>
+        </article>
+      </section>
+
+      <section class="seccion-extra" id="planes">
+        <h2 class="titulo-seccion">Elige cómo quieres saborear</h2>
+        <div class="planes-grid">
+          <div class="plan-card">
+            <h3>Aficionado</h3>
+            <div class="precio">S/ 0<span>/mes</span></div>
+            <p class="plan-desc">
+              Perfecto para empezar a descubrir nuevos sabores.
+            </p>
+            <ul class="plan-lista">
+              <li><span>&#10003;</span> Acceso a miles de recetas libres</li>
+              <li><span>&#10003;</span> Guarda hasta 50 recetas favoritas</li>
+              <li><span>&#10003;</span> Participación en los foros</li>
+            </ul>
+            <a href="#" class="btn-plan btn-secundario">Empezar gratis</a>
+          </div>
+
+          <div class="plan-card plan-destacado">
+            <div class="etiqueta-popular">Más Popular</div>
+            <h3>Premium</h3>
+            <div class="precio">S/ 19.90<span>/mes</span></div>
+            <p class="plan-desc">
+              Para los que viven y respiran la buena cocina.
+            </p>
+            <ul class="plan-lista">
+              <li><span>&#10003;</span> Todo lo del plan Aficionado</li>
+              <li><span>&#10003;</span> Sin anuncios publicitarios</li>
+              <li><span>&#10003;</span> Recetas exclusivas de chefs</li>
+              <li><span>&#10003;</span> Filtros avanzados por ingredientes</li>
+            </ul>
+            <a href="#" class="btn-plan btn-primario">Prueba de 14 días</a>
+          </div>
+
+          <div class="plan-card">
+            <h3>Maestro</h3>
+            <div class="precio">S/ 39.90<span>/mes</span></div>
+            <p class="plan-desc">Herramientas profesionales para creadores.</p>
+            <ul class="plan-lista">
+              <li><span>&#10003;</span> Todo lo del plan Premium</li>
+              <li><span>&#10003;</span> Monetiza tus propias recetas</li>
+              <li><span>&#10003;</span> Analíticas de tu perfil</li>
+              <li><span>&#10003;</span> Masterclass mensual en vivo</li>
+            </ul>
+            <a href="#" class="btn-plan btn-secundario">Obtener Maestro</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion-extra" id="historia">
+        <div class="historia-grid">
+          <div class="historia-texto">
+            <h2 class="titulo-izq">Nuestra Historia</h2>
+            <p>
+              Todo comenzó con la idea de transformar comidas casuales en
+              recuerdos inolvidables. Desde organizar una tarde compartiendo
+              sushi frente a un atardecer limeño, hasta encontrar el equilibrio
+              exacto para una hamburguesa con sabor a viernes por la noche.
+            </p>
+            <br />
+            <p>
+              Creemos que la mejor comida es la que se comparte. Creamos este
+              espacio para que descubras sabores nuevos, armes tu próxima salida
+              y conectes con nuestra comunidad.
+            </p>
+          </div>
+          <div class="historia-imagen-caja">
+            <img
+              src="https://picsum.photos/500/400?random=10" alt="Compartiendo Comida"/>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-banner">
+        <h2>¿Hambriento de más ideas?</h2>
+        <p>
+          Recibe nuestras mejores recetas, tips de cocina y recomendaciones
+          directamente en tu correo.
+        </p>
+        <form class="newsletter-form">
+          <input
+            type="email"
+            placeholder="Tu mejor correo electrónico..."
+            required
+          />
+          <button type="submit">Suscribirme</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer-bg" id="contacto">
+      <div class="footer-container">
+        <div class="footer-texto">
+          <p>
+            &copy; 2026 Sabor y Comparte. Elaborado con pasión por la buena
+            comida.
+          </p>
+        </div>
+        <div class="footer-social">
+          <img src="images/logofb.png" alt="Facebook" />
+          <img src="images/logoig.jpg" alt="Instagram" />
+          <img src="images/logox.png" alt="Twitter" />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

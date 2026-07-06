@@ -1,0 +1,695 @@
+/* =========================================
+   1. CONFIGURACIÓN BASE Y REGLAS ESTRICTAS
+   ========================================= */
+:root {
+  --naranja: #f26c36;
+  --naranja-oscuro: #d95a28;
+  --texto: #1a1a1a;
+  --texto-suave: #555555;
+  --fondo: #fcfcfc;
+  --gris-claro: #f5f5f5;
+  --borde: #eaeaea;
+  --blanco: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+}
+
+body {
+  background-color: var(--fondo);
+  padding-top: 120px;
+}
+
+.contenedor-principal img,
+.footer-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenedor-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================================
+   2. HEADER FIJO Y BARRA DE BÚSQUEDA
+   ========================================= */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--blanco);
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 15px 20px 0 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto 15px auto;
+  position: relative;
+}
+
+#menu-toggle-checkbox {
+  display: none;
+}
+
+.hamburger-btn {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--texto);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--naranja);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--gris-claro);
+  border-radius: 20px;
+  padding: 6px 15px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 5px;
+  width: 140px;
+}
+
+.search-bar button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.btn-registro {
+  background-color: var(--naranja);
+  color: var(--blanco) !important;
+  padding: 10px 22px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(242, 108, 54, 0.2);
+}
+
+.btn-registro:hover {
+  transform: translateY(-2px);
+  background-color: var(--naranja-oscuro);
+  box-shadow: 0 6px 15px rgba(242, 108, 54, 0.4);
+}
+
+/* Reemplaza tu clase .logo actual por esta: */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blanco);
+    padding: 12px 25px;
+    border-radius: 0 0 35px 35px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -15px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.04);
+    text-decoration: none; /* Evita que el logo se subraye */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Añade este pequeño bloque justo debajo para que el logo se mueva al pasar el mouse (solo en PC) */
+@media (min-width: 769px) {
+    .logo:hover {
+        transform: translateX(-50%) translateY(3px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+}
+
+/* =========================================
+   3. HERO SECTION (CSS GRID)
+   ========================================= */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  background-color: var(--naranja);
+  border-radius: 40px;
+  padding: 20px;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 60px;
+  box-shadow: 0 10px 30px rgba(242, 108, 54, 0.15);
+}
+
+.hero-imagen-caja {
+  width: 100%;
+  height: 360px;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+}
+
+.hero-texto {
+  text-align: center;
+  color: var(--blanco);
+  padding: 0 15px;
+}
+
+.hero-texto h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+.hero-texto h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.hero-texto p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* =========================================
+   4. SECCIONES EXTRA (COLECCIONES E HISTORIA)
+   ========================================= */
+.titulo-seccion {
+  text-align: center;
+  color: var(--texto);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+.titulo-izq {
+  color: var(--naranja);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.seccion-extra {
+  background: var(--blanco);
+  padding: 50px;
+  border-radius: 30px;
+  border: 1px solid var(--borde);
+  margin-bottom: 60px;
+}
+
+.colecciones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.coleccion-card {
+  background: var(--gris-claro);
+  border-radius: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.coleccion-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--borde);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.coleccion-imagen {
+  height: 220px;
+  width: 100%;
+}
+.coleccion-info {
+  padding: 25px;
+}
+.coleccion-info h3 {
+  font-size: 1.5rem;
+  color: var(--naranja);
+  margin-bottom: 10px;
+}
+.coleccion-info p {
+  color: var(--texto-suave);
+  line-height: 1.6;
+}
+
+.historia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.historia-texto {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--texto-suave);
+}
+.historia-imagen-caja {
+  height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* =========================================
+   5. TARJETAS DE RECETAS (CSS GRID)
+   ========================================= */
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 70px;
+}
+
+.tarjeta {
+  background-color: var(--naranja);
+  border-radius: 35px;
+  padding: 15px;
+  text-align: center;
+  color: var(--blanco);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(242, 108, 54, 0.2);
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(242, 108, 54, 0.4);
+}
+
+.tarjeta-imagen {
+  width: 100%;
+  height: 220px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background-color: #e0e0e0;
+}
+
+.tarjeta h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+.card-desc {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  opacity: 0.9;
+  padding-bottom: 10px;
+}
+
+.tarjeta-pequena {
+  height: 85%;
+}
+.tarjeta-pequena .tarjeta-imagen {
+  height: 180px;
+}
+
+/* =========================================
+   6. SECCIÓN DE PLANES Y PRECIOS
+   ========================================= */
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.plan-card {
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 25px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.plan-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.plan-card h3 {
+  font-size: 1.4rem;
+  color: var(--texto);
+  margin-bottom: 15px;
+}
+
+.precio {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--naranja);
+  margin-bottom: 15px;
+}
+
+.precio span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--texto-suave);
+}
+
+.plan-desc {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.4;
+  height: 40px; /* Mantiene la alineación */
+}
+
+.plan-lista {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.plan-lista li {
+  color: var(--texto-suave);
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plan-lista li span {
+  color: var(--naranja);
+  font-weight: bold;
+}
+
+.btn-plan {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-secundario {
+  background: var(--gris-claro);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+}
+
+.btn-secundario:hover {
+  background: #e0e0e0;
+}
+
+.btn-primario {
+  background: var(--naranja);
+  color: var(--blanco);
+  box-shadow: 0 4px 15px rgba(242, 108, 54, 0.3);
+}
+
+.btn-primario:hover {
+  background: var(--naranja-oscuro);
+  box-shadow: 0 8px 20px rgba(242, 108, 54, 0.5);
+}
+
+/* Plan Destacado */
+.plan-destacado {
+  border: 2px solid var(--naranja);
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(242, 108, 54, 0.1);
+  position: relative;
+}
+
+.plan-destacado:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.etiqueta-popular {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--naranja);
+  color: var(--blanco);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* =========================================
+   7. NEWSLETTER Y FOOTER
+   ========================================= */
+.newsletter-banner {
+  background-color: var(--gris-claro);
+  padding: 50px 30px;
+  border-radius: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.newsletter-banner h2 {
+  font-size: 2rem;
+  color: var(--texto);
+  margin-bottom: 15px;
+}
+.newsletter-banner p {
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+  margin-bottom: 25px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: var(--naranja);
+  color: var(--blanco);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: var(--naranja-oscuro);
+}
+
+.footer-bg {
+  background-color: var(--blanco);
+  padding: 40px 20px;
+  border-top: 1px solid var(--borde);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-texto p {
+  color: var(--texto-suave);
+  font-weight: 500;
+}
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+.footer-social img {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN (MÓVILES)
+   ========================================= */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+  .hero-texto {
+    order: -1;
+  }
+  .hero-imagen-caja {
+    height: 280px;
+  }
+
+  .tarjetas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+  }
+  .tarjeta-pequena {
+    height: 100%;
+  }
+  .tarjeta-pequena .tarjeta-imagen {
+    height: 220px;
+  }
+
+  .colecciones-grid {
+    grid-template-columns: 1fr;
+  }
+  .historia-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .titulo-izq {
+    text-align: center;
+  }
+
+  /* Ajuste de Planes a 1 columna */
+  .planes-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .plan-destacado {
+    transform: scale(1);
+  }
+  .plan-destacado:hover {
+    transform: translateY(-5px);
+  }
+  .plan-desc {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 90px;
+  }
+  .header-fixed {
+    padding: 15px 20px;
+  }
+
+  .hamburger-btn {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .nav-content {
+    display: none;
+    flex-direction: column;
+    background-color: var(--blanco);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu-toggle-checkbox:checked ~ .nav-content {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  .nav-links a {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .search-bar {
+    margin: 15px auto;
+    width: 80%;
+  }
+  .search-bar input {
+    width: 100%;
+  }
+  .btn-registro {
+    width: 80%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    border-radius: 0;
+    margin: 0 auto;
+    box-shadow: none;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .tarjetas-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-texto h1 {
+    font-size: 2.2rem;
+  }
+  .titulo-seccion {
+    font-size: 1.8rem;
+  }
+}
